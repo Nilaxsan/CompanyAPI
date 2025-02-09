@@ -7,7 +7,7 @@ import { Employee } from '../model/Employee';
 })
 export class EmployeeService {
   apiUrl = 'https://localhost:7022/api/Employee';
-  photoUrl='https://localhost:7022/api/upload';
+  photoUrl='https://localhost:7022/api/Employee/upload';
 
   constructor(private http: HttpClient) {}  
 
@@ -15,8 +15,8 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.apiUrl);
   }
 
-  Get(EmployeeId: string) {
-    return this.http.get<Employee>(this.apiUrl+'/'+EmployeeId);
+  Get(employeeId: string) {
+    return this.http.get<Employee>(this.apiUrl+'/'+employeeId);
   }
 
   Create(data :Employee) {
@@ -24,15 +24,15 @@ export class EmployeeService {
   }
 
   Update(data :Employee) {
-    return this.http.put<Employee>(this.apiUrl+'/'+data.EmployeeId,data);
+    return this.http.put<Employee>(this.apiUrl+'/'+data.employeeId,data);
   }
 
   Delete(EmployeeId : number) {
     return this.http.delete<Employee>(this.apiUrl+'/'+EmployeeId);
   }
 
-  UploadPhoto(id : number ,data :FormData) {
-    return this.http.post<any>(this.photoUrl+'/'+id,data);
+  UploadPhoto(EmployeeId : number ,data :FormData) {
+    return this.http.post<any>(this.photoUrl+'/'+EmployeeId,data);
   }
   
 

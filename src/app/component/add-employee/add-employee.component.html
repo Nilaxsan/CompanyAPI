@@ -10,26 +10,24 @@
                 <mat-label>
                     Employee Name
                 </mat-label>
-                <input matInput formControlName="EmployeeName">
+                <input matInput formControlName="employeeName">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>
                     Department
                 </mat-label>
-                <mat-select formControlName="Department">
+                <mat-select formControlName="departmentName">
                     
-                    <mat-option value="">Please Select Department</mat-option>
-                    <mat-option value="IT">IT</mat-option>
-                    <mat-option value="IDS">IDS</mat-option>
-                    <mat-option value="CM">CM</mat-option>
-
+                    <mat-option *ngFor="let dep of departments"  [value]="dep.departmentName">
+                        {{dep.departmentName}}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>
                     Date of Joining
                 </mat-label>
-                <input matInput formControlName="DateOfJoining" [matDatepicker]="picker">
+                <input matInput formControlName="dateOfJoining" [matDatepicker]="picker">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -43,4 +41,3 @@
         </mat-cart-actions>
     </mat-card>
 </form> 
-

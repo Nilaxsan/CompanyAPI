@@ -4,6 +4,9 @@
             DepartmentList
         </h2> -->
         <button mat-raised-button  color="primary" (click)="addDepartment()">Add Department</button>
+        <button mat-raised-button routerlink="/employee">Employee</button>
+
+
     </mat-card-header>
     <mat-card-content>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
