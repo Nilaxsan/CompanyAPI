@@ -8,11 +8,11 @@ import { Department } from '../../model/Department';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { DepartmentService } from '../../service/department.service';
 import { Subscription } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-department',
-  imports: [MatCardModule, MatButtonModule, MatDialogModule, MatTableModule,RouterLink],
+  imports: [MatCardModule, MatButtonModule, MatDialogModule, MatTableModule,RouterLink,RouterOutlet],
   templateUrl: './department.component.html',
   styleUrl: './department.component.css',
 })

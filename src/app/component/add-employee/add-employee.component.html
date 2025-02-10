@@ -1,43 +1,46 @@
 <form [formGroup]="empForm" (ngSubmit)="SaveEmployee()">
     <mat-card>
         <mat-card-header>
-            <h2>
-                {{title}}
-            </h2>
+            <h2>{{ title }}</h2>
         </mat-card-header>
         <mat-card-content>
             <mat-form-field>
-                <mat-label>
-                    Employee Name
-                </mat-label>
-                <input matInput formControlName="employeeName">
+                <mat-label>Employee Name</mat-label>
+                <input matInput formControlName="employeeName" />
             </mat-form-field>
+
             <mat-form-field>
-                <mat-label>
-                    Department
-                </mat-label>
+                <mat-label>Department</mat-label>
                 <mat-select formControlName="departmentName">
-                    
-                    <mat-option *ngFor="let dep of departments"  [value]="dep.departmentName">
-                        {{dep.departmentName}}
+                    <mat-option *ngFor="let dep of departments" [value]="dep.departmentName">
+                        {{ dep.departmentName }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
+
             <mat-form-field>
-                <mat-label>
-                    Date of Joining
-                </mat-label>
-                <input matInput formControlName="dateOfJoining" [matDatepicker]="picker">
+                <mat-label>Date of Joining</mat-label>
+                <input matInput formControlName="dateOfJoining" [matDatepicker]="picker" />
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-            <input hidden (change)="onFileSelected($event)" #fileInput type="file">
-            <span class="file-name">{{selectedFile?.name}}</span>
+
+            <!-- Image upload section shown only in edit mode -->
+            <div *ngIf="isEdit">
+                <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+                <input hidden (change)="onFileSelected($event)" #fileInput type="file" />
+                <div>
+                    <img [src]="imageUrl" alt="Employee Image" class="img-uploaded" />
+
+                </div>
+            </div> 
+         
+
         </mat-card-content>
-        <mat-cart-actions>
+
+        <mat-card-actions>
             <button type="submit" mat-raised-button color="primary">Save</button>
             <a mat-raised-button color="accent" (click)="closepopup()">Close</a>
-        </mat-cart-actions>
+        </mat-card-actions>
     </mat-card>
-</form> 
+</form>
