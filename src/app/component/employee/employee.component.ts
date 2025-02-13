@@ -8,11 +8,10 @@ import { Employee } from '../../model/Employee';
 import { Subscription } from 'rxjs';
 import { EmployeeService } from '../../service/employee.service';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
 @Component({
   selector: 'app-employee',
-  imports: [MatCardModule,MatButtonModule,MatDialogModule,MatTableModule,CommonModule,RouterLink],
+  imports: [MatCardModule,MatButtonModule,MatDialogModule,MatTableModule,CommonModule],
     providers: [provideNativeDateAdapter()],
 
   templateUrl: './employee.component.html',

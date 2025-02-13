@@ -7,3 +7,7 @@
     border: 1px solid #000;
     border-radius: 50%;   
 }
+.mdc-button{
+    margin: 2px;    
+}
+

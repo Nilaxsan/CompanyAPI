@@ -1,0 +1,38 @@
+<form [formGroup]="registationForm" (ngSubmit)="onRegister()">
+
+  <mat-card class="registration-card">
+    <h2>{{title}}</h2>
+
+    <mat-card-content>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="userName" >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" placeholder="Role">
+          <mat-option value="Admin">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </mat-card-content>
+
+
+
+    <mat-cart-actions>
+
+      <button mat-raised-button type="submit" color="primary">
+        Register
+      </button>
+    </mat-cart-actions>
+  </mat-card>
+</form>

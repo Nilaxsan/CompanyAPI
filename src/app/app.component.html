@@ -1,7 +1,12 @@
-<button class="nav-btn" mat-button routerLink="/employee">Employee List</button>
-<button class="nav-btn" mat-button routerLink="/department">Department</button>
+<div *ngIf="isLoggedIn">
+    <button class="nav-btn" mat-button routerLink="/employee">Employee</button>
+    <button class="nav-btn" mat-button routerLink="/department">Department</button>
+    <button class="logout-btn" mat-button (click)="logOut()">Logout</button>
+
+</div>
+
 
 
 <router-outlet>
-    
-</router-outlet> 
+
+</router-outlet>
