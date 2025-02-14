@@ -63,4 +63,7 @@ export class AdminRegistationComponent implements OnInit {
       });
   }
 }
+goLogin(){
+  this.route.navigateByUrl('/admin-login');
+}
 }
